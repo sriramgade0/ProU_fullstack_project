@@ -1,0 +1,133 @@
+.dashboard {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.dashboard h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 0.95rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-card.total {
+  border-left-color: #667eea;
+}
+
+.stat-card.total .stat-number {
+  color: #667eea;
+}
+
+.stat-card.completed {
+  border-left-color: #4CAF50;
+}
+
+.stat-card.completed .stat-number {
+  color: #4CAF50;
+}
+
+.stat-card.in-progress {
+  border-left-color: #FFA726;
+}
+
+.stat-card.in-progress .stat-number {
+  color: #FFA726;
+}
+
+.stat-card.pending {
+  border-left-color: #9E9E9E;
+}
+
+.stat-card.pending .stat-number {
+  color: #9E9E9E;
+}
+
+.stat-card.completion-rate {
+  border-left-color: #2196F3;
+  grid-column: span 2;
+}
+
+.stat-card.completion-rate .stat-number {
+  color: #2196F3;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2196F3, #21CBF3);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card.completion-rate {
+    grid-column: span 1;
+  }
+
+  .dashboard h2 {
+    font-size: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
